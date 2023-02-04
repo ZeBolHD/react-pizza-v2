@@ -4,10 +4,6 @@ import { Routes, Route } from "react-router-dom";
 import "./scss/app.scss";
 
 import Header from "./components/Header";
-import Categories from "./components/Categories";
-import Sort from "./components/Sort";
-import PizzaBlock from "./components/PizzaBlock";
-import Skeleton from "./components/PizzaBlock/Skeleton";
 
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
