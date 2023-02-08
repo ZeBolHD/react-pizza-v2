@@ -7,6 +7,10 @@ body {
   background-color: $background;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .wrapper {
   width: calc(100vw - 100px);
   height: 100%;
@@ -23,7 +27,7 @@ body {
 }
 
 .content {
-  padding: 40px 0;
+  padding: 40px;
 
   &__title {
     font-weight: 800;
@@ -35,7 +39,7 @@ body {
   &__items {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     grid-column-gap: 11px;
 
     @media (max-width: 1400px) {
