@@ -1,22 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  list: [],
+  categoryId: 0,
+  sort: {
+    name: "популярности",
+    sortProperty: "rating",
+  },
 };
 
-export const taskSlice = createSlice({
-  name: "task",
+const filterSlice = createSlice({
+  name: "filter",
   initialState,
   reducers: {
-    setTask: (state) => {
-      state.list.push("задача");
+    setCategoryId(state, action) {
+      state.categoryId = action.payload;
     },
-    decrement: (state) => {
-      state.count -= 1;
+    setSort(state, action) {
+      state.sort = action.payload;
     },
   },
 });
 
-export const { decrement, setTask } = taskSlice.actions;
+export const { setCategoryId, setSort } = filterSlice.actions;
 
-export default taskSlice.reducer;
+export default filterSlice.reducer;
