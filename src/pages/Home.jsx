@@ -69,6 +69,7 @@ export default function Home() {
   }, [categoryId, sort.sortProperty, currentPage]);
 
   React.useEffect(() => {
+    document.title = "React Pizza";
     if (window.location.search) {
       const params = qs.parse(window.location.search.substring(1));
 
