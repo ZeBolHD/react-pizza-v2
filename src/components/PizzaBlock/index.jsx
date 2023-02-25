@@ -6,14 +6,7 @@ import { addItem, selectCartItemById } from "../../redux/slices/cartSlice";
 
 const typeNames = ["тонкое", "традиционное"];
 
-export default function PizzaBlock({
-  id,
-  title,
-  price,
-  imageUrl,
-  sizes,
-  types,
-}) {
+const PizzaBlock = ({ id, title, price, imageUrl, sizes, types }) => {
   const dispatch = useDispatch();
   const cartItem = useSelector(selectCartItemById(id));
 
@@ -95,4 +88,6 @@ export default function PizzaBlock({
       </div>
     </div>
   );
-}
+};
+
+export default PizzaBlock;

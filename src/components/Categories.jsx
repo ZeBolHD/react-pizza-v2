@@ -1,6 +1,4 @@
-import React from "react";
-
-export default function Categories({ value, onChangeCategory }) {
+const Categories = ({ value, onChangeCategory }) => {
   const categories = [
     "Все",
     "Мясные",
@@ -27,4 +25,6 @@ export default function Categories({ value, onChangeCategory }) {
       </ul>
     </div>
   );
-}
+};
+
+export default Categories;

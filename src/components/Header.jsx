@@ -7,7 +7,7 @@ import logoSvg from "../assets/img/pizza-logo.svg";
 import Search from "./Search";
 import { selectCart } from "../redux/slices/cartSlice";
 
-export default function Header() {
+const Header = () => {
   const { items, totalPrice } = useSelector(selectCart);
   const location = useLocation();
 
@@ -69,4 +69,6 @@ export default function Header() {
       </div>
     </div>
   );
-}
+};
+
+export default Header;

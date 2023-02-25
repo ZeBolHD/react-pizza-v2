@@ -11,7 +11,7 @@ export const sortList = [
   { name: "алфавиту (ASC)", sortProperty: "-title" },
 ];
 
-export default function Sort() {
+const Sort = () => {
   const dispatch = useDispatch();
   const sort = useSelector(selectSort);
   const sortRef = React.useRef();
@@ -76,4 +76,6 @@ export default function Sort() {
       )}
     </div>
   );
-}
+};
+
+export default Sort;

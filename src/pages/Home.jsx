@@ -17,7 +17,7 @@ import PizzaBlock from "../components/PizzaBlock";
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import Pagination from "../components/Pagination";
 
-export default function Home() {
+const Home = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isSearch = React.useRef(false);
@@ -126,4 +126,6 @@ export default function Home() {
       <Pagination currentPage={currentPage} onChangePage={onChangePage} />
     </>
   );
-}
+};
+
+export default Home;
