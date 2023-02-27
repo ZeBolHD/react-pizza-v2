@@ -17,6 +17,16 @@ import PizzaBlock from "../components/PizzaBlock";
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import Pagination from "../components/Pagination";
 
+type PizzaType = {
+  category: number;
+  id: number;
+  imageUrl: string;
+  price: number;
+  sizes: number[];
+  title: string;
+  types: number[];
+};
+
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -98,7 +108,9 @@ const Home: React.FC = () => {
     isSearch.current = false;
   }, [categoryId, sortType, searchValue, currentPage]);
 
-  const pizzas = items.map((obj: any) => <PizzaBlock key={obj.id} {...obj} />);
+  const pizzas = items.map((obj: PizzaType) => (
+    <PizzaBlock key={obj.id} {...obj} />
+  ));
 
   const skeletons = [...new Array(6)].map((_, index) => (
     <Skeleton key={index} />
