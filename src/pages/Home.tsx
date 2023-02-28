@@ -17,7 +17,7 @@ import {
 } from "../redux/slices/pizzaSlice";
 
 import Categories from "../components/Categories";
-import SortPopUp, { sortList } from "../components/Sort";
+import SortPopUp from "../components/Sort";
 import PizzaBlock from "../components/PizzaBlock";
 import Skeleton from "../components/PizzaBlock/Skeleton";
 import Pagination from "../components/Pagination";
@@ -35,9 +35,9 @@ const Home: React.FC = () => {
 
   const sortType = sort.sortProperty;
 
-  const onChangeCategory = (idx: number) => {
+  const onChangeCategory = React.useCallback((idx: number) => {
     dispatch(setCategoryId(idx));
-  };
+  }, []);
 
   const onChangePage = (pages: number) => {
     dispatch(setCurrentPage(pages));
@@ -115,7 +115,7 @@ const Home: React.FC = () => {
     <>
       <div className="content__top">
         <Categories value={categoryId} onChangeCategory={onChangeCategory} />
-        <SortPopUp />
+        <SortPopUp value={sort} />
       </div>
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">
