@@ -11,8 +11,6 @@ const Header: React.FC = () => {
   const { items, totalPrice } = useSelector(selectCart);
   const location = useLocation();
 
-  console.log(location);
-
   const totalCount: number = items.reduce(
     (sum: number, item: any) => sum + item.count,
     0
