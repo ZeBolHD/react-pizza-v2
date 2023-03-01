@@ -1,12 +1,8 @@
 import { useWhyDidYouUpdate } from "ahooks";
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  selectSort,
-  setSort,
-  SortPropertyEnum,
-  Sort,
-} from "../redux/slices/filterSlice";
+import { useDispatch } from "react-redux";
+import { setSort } from "../redux/filter/slice";
+import { SortPropertyEnum, Sort } from "../redux/filter/types";
 
 type SortItem = {
   name: string;
