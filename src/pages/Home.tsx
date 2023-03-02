@@ -3,11 +3,13 @@ import qs from "qs";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import Categories from "../components/Categories";
-import SortPopUp from "../components/Sort";
-import PizzaBlock from "../components/PizzaBlock";
-import Skeleton from "../components/PizzaBlock/Skeleton";
-import Pagination from "../components/Pagination";
+import {
+  PizzaBlock,
+  Skeleton,
+  Categories,
+  Sort,
+  Pagination,
+} from "../components";
 
 import { useAppDispatch } from "../redux/store";
 import { selectFilter } from "../redux/filter/selector";
@@ -20,6 +22,10 @@ const Home: React.FC = () => {
   const dispatch = useAppDispatch();
   const isSearch = React.useRef(false);
   const isMounted = React.useRef(false);
+
+  import("../utils/math").then((math) => {
+    console.log(math.add(16, 27));
+  });
 
   const { categoryId, sort, currentPage, searchValue } =
     useSelector(selectFilter);
@@ -107,7 +113,7 @@ const Home: React.FC = () => {
     <>
       <div className="content__top">
         <Categories value={categoryId} onChangeCategory={onChangeCategory} />
-        <SortPopUp value={sort} />
+        <Sort value={sort} />
       </div>
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">

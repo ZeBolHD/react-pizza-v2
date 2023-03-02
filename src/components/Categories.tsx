@@ -6,7 +6,7 @@ type CategoriesProps = {
   onChangeCategory: (idx: number) => void;
 };
 
-const Categories: React.FC<CategoriesProps> = React.memo(
+export const Categories: React.FC<CategoriesProps> = React.memo(
   ({ value, onChangeCategory }) => {
     const categories: string[] = [
       "Все",
@@ -36,5 +36,3 @@ const Categories: React.FC<CategoriesProps> = React.memo(
     );
   }
 );
-
-export default Categories;
