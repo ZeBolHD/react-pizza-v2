@@ -1,1 +1,1 @@
-React Studying :)
+React Pizza v2 course
